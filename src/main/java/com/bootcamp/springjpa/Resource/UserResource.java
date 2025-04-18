@@ -1,11 +1,11 @@
-package com.bootcamp.springjpa.bootcamp_sj.Resource;
+package com.bootcamp.springjpa.Resource;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bootcamp.springjpa.bootcamp_sj.Entities.User;
+import com.bootcamp.springjpa.Entities.User;
 
 
 

@@ -1,4 +1,4 @@
-package com.bootcamp.springjpa.bootcamp_sj.Entities;
+package com.bootcamp.springjpa.Entities;
 import java.io.Serializable;
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package com.bootcamp.springjpa.bootcamp_sj;
+package com.bootcamp.springjpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

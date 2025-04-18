@@ -1,4 +1,4 @@
-package com.bootcamp.springjpa.bootcamp_sj.config;
+package com.bootcamp.springjpa.config;
 
 import java.util.Arrays;
 
@@ -7,8 +7,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import com.bootcamp.springjpa.bootcamp_sj.Entities.User;
-import com.bootcamp.springjpa.bootcamp_sj.repositories.UserRepository;
+import com.bootcamp.springjpa.Entities.User;
+import com.bootcamp.springjpa.repositories.UserRepository;
 
 @Configuration
 @Profile("test")
