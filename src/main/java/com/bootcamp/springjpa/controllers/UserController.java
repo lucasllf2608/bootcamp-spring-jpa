@@ -23,10 +23,8 @@ public class UserController {
 
 	@GetMapping
 	public ResponseEntity<List<User>> findAll() {
-		
 		List<User> listUsers = userService.findAll();
 		return ResponseEntity.ok().body(listUsers);
-	
 	}
 	
 	@GetMapping(value="/{id}")
