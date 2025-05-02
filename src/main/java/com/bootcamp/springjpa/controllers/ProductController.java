@@ -15,7 +15,7 @@ import com.bootcamp.springjpa.services.ProductService;
 
 
 @RestController
-@RequestMapping(value="/product")
+@RequestMapping(value="/products")
 public class ProductController {
 	
 	@Autowired
