@@ -13,6 +13,8 @@ import com.bootcamp.springjpa.repositories.UserRepository;
 import com.bootcamp.springjpa.services.excepetion.DataBaseException;
 import com.bootcamp.springjpa.services.excepetion.ResourceNotFoundException;
 
+import jakarta.persistence.EntityNotFoundException;
+
 @Service
 public class UserService {
 
@@ -47,10 +49,21 @@ public class UserService {
 		}
 	}
 	
-	public User update(Long id, User obj) {
-		User entity = userRepository.getReferenceById(id);
-		updateData(entity, obj);
-		return userRepository.save(entity);
+	public User update(Long id, User obj) {		
+		try {
+
+			if(!userRepository.existsById(id)) {
+				throw new ResourceNotFoundException(id);	
+			} else {
+				User entity = userRepository.getReferenceById(id);
+				updateData(entity, obj);
+				userRepository.flush();	
+				return userRepository.save(entity);
+			}
+			
+		} catch (DataIntegrityViolationException e ) {
+			throw new DataBaseException(e.getMessage());
+		}
 	}
 
 	private void updateData(User entity, User obj) {
