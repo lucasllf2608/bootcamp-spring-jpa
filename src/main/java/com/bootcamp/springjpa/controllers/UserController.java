@@ -18,6 +18,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.bootcamp.springjpa.Entities.User;
 import com.bootcamp.springjpa.services.UserService;
 
+import jakarta.persistence.EntityNotFoundException;
+
 
 
 @RestController
@@ -49,8 +51,13 @@ public class UserController {
 	
 	@DeleteMapping(value ="/{id}")
 	public ResponseEntity<Void> delete(@PathVariable Long id) {
-		userService.delete(id);
-		return ResponseEntity.noContent().build();
+		try {
+			userService.delete(id);
+		    return ResponseEntity.noContent().build();
+		} catch (EntityNotFoundException e) {
+		    return ResponseEntity.notFound().build();
+		}
+		
 	}
 	
 	@PutMapping(value="/{id}")
